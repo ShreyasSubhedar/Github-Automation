@@ -17,6 +17,9 @@ git = Github(os.environ.get(GITHUB_USERNAME), os.environ.get(GITHUB_PASSWORD))
 # reading all repositories names
 for repo in git.get_user().get_repos():
     print(repo.name)
+    if repo.name == 'Automated Repository':
+        print('Repository with default name is already exist')
+        os.exit(1)
 
 # get user
 user = git.get_user()
